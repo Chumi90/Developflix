@@ -21,7 +21,7 @@ h2 {
   --size_letter: 10px;
 }
 
-#genero-28{
+#genero-28, #genero-53 , #genero-12 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
