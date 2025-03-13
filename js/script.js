@@ -60,4 +60,58 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("El script.js ha sido cargado correctamente.");
 });
 */
-const elemento = document.getElementById('genero-28');
+const elem_gen_28 = document.getElementById('genero-28');
+//console.log(elem_gen_28);
+const elem_gen_53 = document.getElementById('genero-53');
+//console.log(elem_gen_53);
+const elem_gen_12 = document.getElementById('genero-12');
+//console.log(elem_gen_12);
+
+/**Creamos un Article para meter dentro de este una imagen y un texto (a), cada película tendrá su Article */
+//Vamos a usar la función create element para luego utilizar un text content
+//Con las posiciones vamos a recorrer el array de estructuras y obtener la imagen (poster_path) y el título (original_title)
+const route='https://image.tmdb.org/t/p/w500';
+for (let i=0;i<action_movies.length;i++){
+    const article_movies= document.createElement('article'); //Creamos un articulo
+    const img_movies = document.createElement('img'); //Creamos una imagen
+    const a_title=document.createElement('a'); //Creamos un párrafo para indicar el título
+    article_movies.textContent=''; //Dejamos vacío el articulo dado que será con lo que hagamos un Display Flex
+    elem_gen_28.appendChild(article_movies); //Agregamos el Articulo a div de genero
+    //console.log(peliculas[action_movies[i]].poster_path);
+    img_movies.src=route+peliculas[action_movies[i]].poster_path; //Introducimos la imagen en el src del HTML
+    img_movies.title=peliculas[action_movies[i]].original_title; //Introducimos el título original a la etiqueta img
+    article_movies.appendChild(img_movies); //Hacemos que las imágenes sean el hijo de nuestro articulo
+    a_title.textContent=peliculas[action_movies[i]].title; //Introducimos el título de la película en un párrafo
+    a_title.href=route+peliculas[action_movies[i]].poster_path;
+    article_movies.appendChild(a_title); //Hacemos que el <a> del título sea el hijo del articulo
+}
+
+for (let i=0;i<thriller_movies.length;i++){
+    const article_movies= document.createElement('article'); //Creamos un articulo
+    const img_movies = document.createElement('img'); //Creamos una imagen
+    const a_title=document.createElement('a'); //Creamos un párrafo para indicar el título
+    article_movies.textContent=''; //Dejamos vacío el articulo dado que será con lo que hagamos un Display Flex
+    elem_gen_53.appendChild(article_movies); //Agregamos el Articulo a div de genero
+    //console.log(peliculas[action_movies[i]].poster_path);
+    img_movies.src=route+peliculas[thriller_movies[i]].poster_path; //Introducimos la imagen en el src del HTML
+    img_movies.title=peliculas[thriller_movies[i]].original_title; //Introducimos el título original a la etiqueta img
+    article_movies.appendChild(img_movies); //Hacemos que las imágenes sean el hijo de nuestro articulo
+    a_title.textContent=peliculas[thriller_movies[i]].title; //Introducimos el título de la película en un párrafo
+    a_title.href=route+peliculas[thriller_movies[i]].poster_path;
+    article_movies.appendChild(a_title); //Hacemos que el párrafo del título sea el hijo del articulo
+}
+
+for (let i=0;i<aventuras_movies.length;i++){
+    const article_movies= document.createElement('article'); //Creamos un articulo
+    const img_movies = document.createElement('img'); //Creamos una imagen
+    const a_title=document.createElement('a'); //Creamos un párrafo para indicar el título
+    article_movies.textContent=''; //Dejamos vacío el articulo dado que será con lo que hagamos un Display Flex
+    elem_gen_12.appendChild(article_movies); //Agregamos el Articulo a div de genero
+    //console.log(peliculas[action_movies[i]].poster_path);
+    img_movies.src=route+peliculas[aventuras_movies[i]].poster_path; //Introducimos la imagen en el src del HTML
+    img_movies.title=peliculas[aventuras_movies[i]].original_title; //Introducimos el título original a la etiqueta img
+    article_movies.appendChild(img_movies); //Hacemos que las imágenes sean el hijo de nuestro articulo
+    a_title.textContent=peliculas[aventuras_movies[i]].title; //Introducimos el título de la película en un párrafo
+    a_title.href=route+peliculas[aventuras_movies[i]].poster_path;
+    article_movies.appendChild(a_title); //Hacemos que el párrafo del título sea el hijo del articulo
+}

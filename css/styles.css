@@ -15,4 +15,34 @@ h2 {
   margin-bottom: 10px;
 }
 
+/*Creamos variables para cambiar los tamaños y fondos*/
+:root{
+  --size_width: 100px;
+  --size_letter: 10px;
+}
 
+#genero-28{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+article{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 0px 10px 0px; /*Arriba izquierda abajo derecha*/
+}
+
+img{
+  width: var(--size_width);
+}
+
+a{
+  font-size: var(--size_letter);
+  font-weight: bold;
+  width: var(--size_width);
+  text-decoration: none;
+  text-align: justify;
+  color: black;
+}
